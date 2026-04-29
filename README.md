@@ -1,2 +1,19 @@
-# portfolio-estudio-fph
-Site portfolio premium do Estúdio FPH, focado em arquitetura contemporânea, BIM, sofisticação visual e captação de clientes. Projeto com design minimalista em tons terrosos, apresentação profissional de serviços, cases e contato.
+# Estúdio FPH — Portfolio Website
+
+Site portfolio profissional desenvolvido para o Estúdio FPH, com foco em arquitetura contemporânea, BIM, sofisticação visual e captação de clientes.
+
+## Objetivo
+
+Criar uma presença digital premium que transmita autoridade técnica, estética refinada e confiança.
+
+## Estrutura
+
+* Home
+* Sobre
+* Serviços
+* Portfólio
+* Contato
+
+## Status
+
+Em desenvolvimento.
