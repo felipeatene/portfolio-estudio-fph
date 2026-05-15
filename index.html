@@ -106,55 +106,186 @@
 
 <!-- ============ MODAIS DE PDF ============ -->
 <div class="modal-backdrop" id="modal-hospital" onclick="closeModalOutside(event,'modal-hospital')">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Hospital Sol">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-hospital-title" aria-describedby="modal-hospital-content">
     <div class="modal-header">
-      <div><span class="cat">Hospitalar</span><h3>Hospital Sol</h3></div>
+      <div>
+        <span class="cat">Hospitalar</span>
+        <h3 id="modal-hospital-title">Hospital Sol</h3>
+      </div>
       <button class="modal-close" onclick="closeModalDirect('modal-hospital')" aria-label="Fechar">✕</button>
     </div>
-    <div class="modal-tabs">
-      <button class="tab-btn active" onclick="switchTab(this,'tab-h1')">Implantação</button>
-      <button class="tab-btn" onclick="switchTab(this,'tab-h2')">Drywall</button>
-      <a class="tab-btn dl" href="arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf" download>↓ Implantação</a>
-      <a class="tab-btn dl" href="arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf" download>↓ Drywall</a>
-    </div>
-    <div class="pdf-frame-wrap">
-      <iframe id="tab-h1" class="pdf-frame active" src="arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf" title="Implantação Hospital Sol"></iframe>
-      <iframe id="tab-h2" class="pdf-frame" src="arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf" title="Drywall Hospital Sol"></iframe>
+    <div class="modal-content">
+      <div class="modal-sidebar">
+        <nav class="modal-nav">
+          <button class="nav-btn active" onclick="switchSection(this, 'hospital-summary')">Resumo</button>
+          <button class="nav-btn" onclick="switchSection(this, 'hospital-scope')">Escopo Técnico</button>
+          <button class="nav-btn" onclick="switchSection(this, 'hospital-challenges')">Desafios e Soluções</button>
+          <button class="nav-btn" onclick="switchSection(this, 'hospital-indicators')">Indicadores</button>
+          <button class="nav-btn" onclick="switchSection(this, 'hospital-technologies')">Tecnologias</button>
+          <button class="nav-btn" onclick="switchSection(this, 'hospital-results')">Resultados</button>
+        </nav>
+      </div>
+      <div class="modal-main" id="modal-hospital-content">
+        <section id="hospital-summary" class="modal-section active">
+          <h4>Resumo do Projeto</h4>
+          <p>Compatibilização BIM, documentação técnica e coordenação entre disciplinas para um complexo hospitalar.</p>
+        </section>
+        <section id="hospital-scope" class="modal-section">
+          <h4>Escopo Técnico</h4>
+          <p>Disciplinas envolvidas: arquitetura, engenharia estrutural, elétrica e hidráulica.</p>
+        </section>
+        <section id="hospital-challenges" class="modal-section">
+          <h4>Desafios e Soluções</h4>
+          <p>Desafios enfrentados incluem a integração de sistemas complexos e a otimização de fluxos hospitalares.</p>
+        </section>
+        <section id="hospital-indicators" class="modal-section">
+          <h4>Indicadores</h4>
+          <ul>
+            <li>Área: 10.000 m²</li>
+            <li>Prazo: 18 meses</li>
+            <li>Fase: Concluído</li>
+            <li>Localização: Belo Horizonte, MG</li>
+          </ul>
+        </section>
+        <section id="hospital-technologies" class="modal-section">
+          <h4>Tecnologias e Softwares</h4>
+          <p>Revit, AutoCAD, Navisworks, BIM 360.</p>
+        </section>
+        <section id="hospital-results" class="modal-section">
+          <h4>Resultados/Impacto</h4>
+          <p>Redução de 20% no tempo de construção e 15% no custo total do projeto.</p>
+        </section>
+        <section id="hospital-documents" class="modal-section">
+          <h4>Documentos</h4>
+          <ul>
+            <li><a href="arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf" download>Implantação</a></li>
+            <li><a href="arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf" download>Drywall</a></li>
+          </ul>
+        </section>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="modal-backdrop" id="modal-ferrosos" onclick="closeModalOutside(event,'modal-ferrosos')">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="Ferrosos Baratinha">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-ferrosos-title" aria-describedby="modal-ferrosos-content">
     <div class="modal-header">
-      <div><span class="cat">Industrial · Comercial</span><h3>Ferrosos Baratinha</h3></div>
+      <div>
+        <span class="cat">Industrial · Comercial</span>
+        <h3 id="modal-ferrosos-title">Ferrosos Baratinha</h3>
+      </div>
       <button class="modal-close" onclick="closeModalDirect('modal-ferrosos')" aria-label="Fechar">✕</button>
     </div>
-    <div class="modal-tabs">
-      <button class="tab-btn active" onclick="switchTab(this,'tab-f1')">Cozinha · Esquadrias</button>
-      <button class="tab-btn" onclick="switchTab(this,'tab-f2')">Detalhamentos</button>
-      <a class="tab-btn dl" href="arquivos/0623FB-00-15-9067.pdf" download>↓ Cozinha</a>
-      <a class="tab-btn dl" href="arquivos/0623FB-00-15-9071.pdf" download>↓ Detalhamentos</a>
-    </div>
-    <div class="pdf-frame-wrap">
-      <iframe id="tab-f1" class="pdf-frame active" src="arquivos/0623FB-00-15-9067.pdf" title="Cozinha Ferrosos"></iframe>
-      <iframe id="tab-f2" class="pdf-frame" src="arquivos/0623FB-00-15-9071.pdf" title="Detalhamentos Ferrosos"></iframe>
+    <div class="modal-content">
+      <div class="modal-sidebar">
+        <nav class="modal-nav">
+          <button class="nav-btn active" onclick="switchSection(this, 'ferrosos-summary')">Resumo</button>
+          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-scope')">Escopo Técnico</button>
+          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-challenges')">Desafios e Soluções</button>
+          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-indicators')">Indicadores</button>
+          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-technologies')">Tecnologias</button>
+          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-results')">Resultados</button>
+        </nav>
+      </div>
+      <div class="modal-main" id="modal-ferrosos-content">
+        <section id="ferrosos-summary" class="modal-section active">
+          <h4>Resumo do Projeto</h4>
+          <p>Restaurante e refeitório industrial com layout de cozinha, esquadrias e mobiliário em aço inox.</p>
+        </section>
+        <section id="ferrosos-scope" class="modal-section">
+          <h4>Escopo Técnico</h4>
+          <p>Disciplinas envolvidas: arquitetura, engenharia de produção e design de interiores.</p>
+        </section>
+        <section id="ferrosos-challenges" class="modal-section">
+          <h4>Desafios e Soluções</h4>
+          <p>Desafios enfrentados incluem a otimização de espaço e fluxo de trabalho na cozinha industrial.</p>
+        </section>
+        <section id="ferrosos-indicators" class="modal-section">
+          <h4>Indicadores</h4>
+          <ul>
+            <li>Área: 2.500 m²</li>
+            <li>Prazo: 12 meses</li>
+            <li>Fase: Em execução</li>
+            <li>Localização: São Paulo, SP</li>
+          </ul>
+        </section>
+        <section id="ferrosos-technologies" class="modal-section">
+          <h4>Tecnologias e Softwares</h4>
+          <p>Revit, AutoCAD, SketchUp.</p>
+        </section>
+        <section id="ferrosos-results" class="modal-section">
+          <h4>Resultados/Impacto</h4>
+          <p>Aumento de 30% na eficiência operacional do restaurante.</p>
+        </section>
+        <section id="ferrosos-documents" class="modal-section">
+          <h4>Documentos</h4>
+          <ul>
+            <li><a href="arquivos/0623FB-00-15-9067.pdf" download>Cozinha</a></li>
+            <li><a href="arquivos/0623FB-00-15-9071.pdf" download>Detalhamentos</a></li>
+          </ul>
+        </section>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="modal-backdrop" id="modal-femsa" onclick="closeModalOutside(event,'modal-femsa')">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-label="FEMSA Coca-Cola Itabirito">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-femsa-title" aria-describedby="modal-femsa-content">
     <div class="modal-header">
-      <div><span class="cat">Corporativo · Industrial</span><h3>FEMSA Coca-Cola — Itabirito</h3></div>
+      <div>
+        <span class="cat">Corporativo · Industrial</span>
+        <h3 id="modal-femsa-title">FEMSA Coca-Cola — Itabirito</h3>
+      </div>
       <button class="modal-close" onclick="closeModalDirect('modal-femsa')" aria-label="Fechar">✕</button>
     </div>
-    <div class="modal-tabs">
-      <button class="tab-btn active" onclick="switchTab(this,'tab-fem1')">Planta de Cotas e Cortes</button>
-      <a class="tab-btn dl" href="arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf" download>↓ PDF Completo</a>
-    </div>
-    <div class="pdf-frame-wrap">
-      <iframe id="tab-fem1" class="pdf-frame active" src="arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf" title="Planta FEMSA"></iframe>
+    <div class="modal-content">
+      <div class="modal-sidebar">
+        <nav class="modal-nav">
+          <button class="nav-btn active" onclick="switchSection(this, 'femsa-summary')">Resumo</button>
+          <button class="nav-btn" onclick="switchSection(this, 'femsa-scope')">Escopo Técnico</button>
+          <button class="nav-btn" onclick="switchSection(this, 'femsa-challenges')">Desafios e Soluções</button>
+          <button class="nav-btn" onclick="switchSection(this, 'femsa-indicators')">Indicadores</button>
+          <button class="nav-btn" onclick="switchSection(this, 'femsa-technologies')">Tecnologias</button>
+          <button class="nav-btn" onclick="switchSection(this, 'femsa-results')">Resultados</button>
+        </nav>
+      </div>
+      <div class="modal-main" id="modal-femsa-content">
+        <section id="femsa-summary" class="modal-section active">
+          <h4>Resumo do Projeto</h4>
+          <p>Ampliação de ilha de armazenamento com rampa, alambrados, cobertura e atendimento à NR-11.</p>
+        </section>
+        <section id="femsa-scope" class="modal-section">
+          <h4>Escopo Técnico</h4>
+          <p>Disciplinas envolvidas: arquitetura, engenharia civil e segurança do trabalho.</p>
+        </section>
+        <section id="femsa-challenges" class="modal-section">
+          <h4>Desafios e Soluções</h4>
+          <p>Desafios enfrentados incluem a adequação às normas NR-11 e a integração com estruturas existentes.</p>
+        </section>
+        <section id="femsa-indicators" class="modal-section">
+          <h4>Indicadores</h4>
+          <ul>
+            <li>Área: 5.000 m²</li>
+            <li>Prazo: 8 meses</li>
+            <li>Fase: Planejamento</li>
+            <li>Localização: Itabirito, MG</li>
+          </ul>
+        </section>
+        <section id="femsa-technologies" class="modal-section">
+          <h4>Tecnologias e Softwares</h4>
+          <p>Revit, AutoCAD, BIM 360.</p>
+        </section>
+        <section id="femsa-results" class="modal-section">
+          <h4>Resultados/Impacto</h4>
+          <p>Conformidade total com normas de segurança e aumento de 25% na capacidade de armazenamento.</p>
+        </section>
+        <section id="femsa-documents" class="modal-section">
+          <h4>Documentos</h4>
+          <ul>
+            <li><a href="arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf" download>Planta de Cotas e Cortes</a></li>
+          </ul>
+        </section>
+      </div>
     </div>
   </div>
 </div>
@@ -262,7 +393,7 @@
         <li>Design gráfico e apresentação visual</li>
       </ul>
 
-      <a href="https://www.linkedin.com/in/felipe-guimar%C3%A3es-4a120918b/" target="_blank" rel="noopener" class="link-arrow">Ver perfil no LinkedIn <span aria-hidden="true">→</span></a>
+      <a href="https://www.linkedin.com/in/felipe-guimar%C3%Aães-4a120918b/" target="_blank" rel="noopener" class="link-arrow">Ver perfil no LinkedIn <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -275,20 +406,37 @@
       <h2 class="section-title">Vamos tirar seu projeto<br>do papel.</h2>
       <p class="contato-loc">Belo Horizonte · Minas Gerais · Brasil</p>
 
-      <ul class="contato-list">
-        <li>
-          <span class="contato-label">WhatsApp</span>
-          <a href="https://wa.me/5531975543755?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20projeto!" target="_blank" rel="noopener">+55 31 97554-3755 →</a>
-        </li>
-        <li>
-          <span class="contato-label">E-mail</span>
-          <a href="mailto:lipeacg@gmail.com?subject=Contato%20via%20site%20Estudio%20FPH">lipeacg@gmail.com →</a>
-        </li>
-        <li>
-          <span class="contato-label">LinkedIn</span>
-          <a href="https://www.linkedin.com/in/felipe-guimar%C3%A3es-4a120918b/" target="_blank" rel="noopener">/felipe-guimarães →</a>
-        </li>
-      </ul>
+      <div class="contato-actions" role="group" aria-label="Canais de contato">
+        <a class="contact-btn" href="https://wa.me/5531975543755?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20projeto!" target="_blank" rel="noopener">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.31 7.26L4 20l.74-4.69A8 8 0 1 1 20 12Z"/><path d="m8.9 9.2.6 2a1 1 0 0 1-.26.98l-.45.45a6.1 6.1 0 0 0 2.58 2.58l.45-.45a1 1 0 0 1 .98-.26l2 .6"/></svg>
+          </span>
+          <span class="contact-copy">
+            <small>WhatsApp</small>
+            <strong>+55 31 97554-3755</strong>
+          </span>
+        </a>
+
+        <a class="contact-btn" href="mailto:lipeacg@gmail.com?subject=Contato%20via%20site%20Estudio%20FPH">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          </span>
+          <span class="contact-copy">
+            <small>E-mail</small>
+            <strong>lipeacg@gmail.com</strong>
+          </span>
+        </a>
+
+        <a class="contact-btn" href="https://www.linkedin.com/in/felipe-guimar%C3%Aães-4a120918b/" target="_blank" rel="noopener">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6Z"/><path d="M2 9h4v11H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </span>
+          <span class="contact-copy">
+            <small>LinkedIn</small>
+            <strong>/felipe-guimarães</strong>
+          </span>
+        </a>
+      </div>
     </div>
 
     <form id="contato-form" class="contato-form" novalidate>
@@ -327,7 +475,7 @@
       </div>
       <div>
         <p class="foot-title">Social</p>
-        <a href="https://www.linkedin.com/in/felipe-guimar%C3%A3es-4a120918b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/felipe-guimar%C3%Aães-4a120918b/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://wa.me/5531975543755" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:lipeacg@gmail.com">E-mail</a>
       </div>
@@ -339,15 +487,259 @@
   </div>
 </footer>
 
+<!-- Include PDF.js library -->
+<script src="node_modules/pdfjs-dist/build/pdf.min.js"></script>
 <script>
-function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
-function closeModalDirect(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
-function closeModalOutside(e,id){if(e.target===document.getElementById(id))closeModalDirect(id);}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-backdrop.open').forEach(function(m){m.classList.remove('open');});document.body.style.overflow='';}});
-document.querySelectorAll('.project').forEach(function(c){c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();c.click();}});});
-function switchTab(btn,targetId){var modal=btn.closest('.modal-box');modal.querySelectorAll('.tab-btn:not(.dl)').forEach(function(b){b.classList.remove('active');});modal.querySelectorAll('.pdf-frame').forEach(function(f){f.classList.remove('active');});btn.classList.add('active');document.getElementById(targetId).classList.add('active');}
-document.getElementById('contato-form').addEventListener('submit',function(e){e.preventDefault();var nome=this.elements['nome'].value,email=this.elements['email'].value,msg=this.elements['mensagem'].value;window.location.href='mailto:lipeacg@gmail.com?subject='+encodeURIComponent('Contato via site Estudio FPH — '+nome)+'&body='+encodeURIComponent('Nome: '+nome+'\nE-mail: '+email+'\n\n'+msg);});
-window.addEventListener('scroll',function(){var h=document.querySelector('.site-header');if(window.scrollY>40)h.classList.add('scrolled');else h.classList.remove('scrolled');});
+  // Unified data model for project content
+  const projectData = {
+    "hospital": {
+      title: "Hospital Sol",
+      category: "Hospitalar",
+      sections: {
+        summary: "Compatibilização BIM, documentação técnica e coordenação entre disciplinas para um complexo hospitalar.",
+        scope: "Disciplinas envolvidas: arquitetura, engenharia estrutural, elétrica e hidráulica.",
+        challenges: "Desafios enfrentados incluem a integração de sistemas complexos e a otimização de fluxos hospitalares.",
+        indicators: {
+          area: "10.000 m²",
+          duration: "18 meses",
+          phase: "Concluído",
+          location: "Belo Horizonte, MG"
+        },
+        technologies: "Revit, AutoCAD, Navisworks, BIM 360.",
+        results: "Redução de 20% no tempo de construção e 15% no custo total do projeto.",
+        documents: [
+          { name: "Implantação", url: "arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf" },
+          { name: "Drywall", url: "arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf" }
+        ]
+      }
+    },
+    "ferrosos": {
+      title: "Ferrosos Baratinha",
+      category: "Industrial · Comercial",
+      sections: {
+        summary: "Restaurante e refeitório industrial com layout de cozinha, esquadrias e mobiliário em aço inox.",
+        scope: "Disciplinas envolvidas: arquitetura, engenharia de produção e design de interiores.",
+        challenges: "Desafios enfrentados incluem a otimização de espaço e fluxo de trabalho na cozinha industrial.",
+        indicators: {
+          area: "2.500 m²",
+          duration: "12 meses",
+          phase: "Em execução",
+          location: "São Paulo, SP"
+        },
+        technologies: "Revit, AutoCAD, SketchUp.",
+        results: "Aumento de 30% na eficiência operacional do restaurante.",
+        documents: [
+          { name: "Cozinha", url: "arquivos/0623FB-00-15-9067.pdf" },
+          { name: "Detalhamentos", url: "arquivos/0623FB-00-15-9071.pdf" }
+        ]
+      }
+    },
+    "femsa": {
+      title: "FEMSA Coca-Cola — Itabirito",
+      category: "Corporativo · Industrial",
+      sections: {
+        summary: "Ampliação de ilha de armazenamento com rampa, alambrados, cobertura e atendimento à NR-11.",
+        scope: "Disciplinas envolvidas: arquitetura, engenharia civil e segurança do trabalho.",
+        challenges: "Desafios enfrentados incluem a adequação às normas NR-11 e a integração com estruturas existentes.",
+        indicators: {
+          area: "5.000 m²",
+          duration: "8 meses",
+          phase: "Planejamento",
+          location: "Itabirito, MG"
+        },
+        technologies: "Revit, AutoCAD, BIM 360.",
+        results: "Conformidade total com normas de segurança e aumento de 25% na capacidade de armazenamento.",
+        documents: [
+          { name: "Planta de Cotas e Cortes", url: "arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf" }
+        ]
+      }
+    }
+  };
+
+  // Function to switch sections dynamically
+  function switchSection(button, sectionId) {
+    const modal = button.closest('.modal-box');
+    modal.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+    modal.querySelectorAll('.modal-section').forEach(section => section.classList.remove('active'));
+    button.classList.add('active');
+    document.getElementById(sectionId).classList.add('active');
+  }
+
+  // Initialize PDF.js viewer
+  function initializePDFViewer(pdfUrl, containerId) {
+    const container = document.getElementById(containerId);
+    const loadingTask = pdfjsLib.getDocument(pdfUrl);
+
+    loadingTask.promise.then(pdf => {
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then(page => {
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          container.appendChild(canvas);
+
+          const viewport = page.getViewport({ scale: 1.5 });
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+        });
+      }
+    }).catch(error => {
+      console.error('Error loading PDF:', error);
+    });
+  }
+
+  // Add viewer controls for zoom, pagination, and search
+  function setupViewerControls(viewerId, pdfUrl) {
+    const viewerContainer = document.getElementById(viewerId);
+    const zoomInButton = document.createElement('button');
+    const zoomOutButton = document.createElement('button');
+    const pageInput = document.createElement('input');
+    const totalPages = document.createElement('span');
+
+    zoomInButton.textContent = '+';
+    zoomOutButton.textContent = '-';
+    pageInput.type = 'number';
+    pageInput.min = 1;
+    pageInput.value = 1;
+    totalPages.textContent = '/ 1';
+
+    const controls = document.createElement('div');
+    controls.className = 'viewer-controls';
+    controls.appendChild(zoomOutButton);
+    controls.appendChild(zoomInButton);
+    controls.appendChild(pageInput);
+    controls.appendChild(totalPages);
+
+    viewerContainer.parentElement.insertBefore(controls, viewerContainer);
+
+    let currentPage = 1;
+    let currentScale = 1.5;
+    let pdfDoc = null;
+
+    const renderPage = (pageNum) => {
+      pdfDoc.getPage(pageNum).then(page => {
+        const canvas = viewerContainer.querySelector('canvas');
+        const context = canvas.getContext('2d');
+        const viewport = page.getViewport({ scale: currentScale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+        page.render(renderContext);
+      });
+    };
+
+    zoomInButton.addEventListener('click', () => {
+      currentScale += 0.2;
+      renderPage(currentPage);
+    });
+
+    zoomOutButton.addEventListener('click', () => {
+      currentScale = Math.max(0.5, currentScale - 0.2);
+      renderPage(currentPage);
+    });
+
+    pageInput.addEventListener('change', () => {
+      const pageNum = parseInt(pageInput.value, 10);
+      if (pageNum > 0 && pageNum <= pdfDoc.numPages) {
+        currentPage = pageNum;
+        renderPage(currentPage);
+      } else {
+        pageInput.value = currentPage;
+      }
+    });
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+      pdfDoc = pdf;
+      totalPages.textContent = `/ ${pdf.numPages}`;
+      renderPage(currentPage);
+    });
+  }
+
+  // Add collapsible thumbnail panel for PDF viewer
+  function setupThumbnailPanel(viewerId, pdfUrl) {
+    const viewerContainer = document.getElementById(viewerId);
+    const thumbnailPanel = document.createElement('div');
+    thumbnailPanel.className = 'thumbnail-panel';
+
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Thumbnails';
+    toggleButton.className = 'thumbnail-toggle';
+    toggleButton.addEventListener('click', () => {
+      thumbnailPanel.classList.toggle('open');
+    });
+
+    viewerContainer.parentElement.insertBefore(toggleButton, viewerContainer);
+    viewerContainer.parentElement.insertBefore(thumbnailPanel, viewerContainer);
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        pdf.getPage(pageNum).then(page => {
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          thumbnailPanel.appendChild(canvas);
+
+          const viewport = page.getViewport({ scale: 0.3 });
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport
+          };
+          page.render(renderContext);
+
+          canvas.addEventListener('click', () => {
+            const mainCanvas = viewerContainer.querySelector('canvas');
+            const mainContext = mainCanvas.getContext('2d');
+            const mainViewport = page.getViewport({ scale: 1.5 });
+            mainCanvas.height = mainViewport.height;
+            mainCanvas.width = mainViewport.width;
+
+            const mainRenderContext = {
+              canvasContext: mainContext,
+              viewport: mainViewport
+            };
+            page.render(mainRenderContext);
+          });
+        });
+      }
+    });
+  }
+
+  // Enable lazy loading for PDFs
+  function lazyLoadPDF(modalId, viewerId, pdfUrl) {
+    const modal = document.getElementById(modalId);
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          initializePDFViewer(pdfUrl, viewerId);
+          setupViewerControls(viewerId, pdfUrl);
+          setupThumbnailPanel(viewerId, pdfUrl);
+          obs.disconnect();
+        }
+      });
+    }, { root: null, threshold: 0.1 });
+
+    observer.observe(modal);
+  }
+
+  // Apply lazy loading to all modals
+  document.addEventListener('DOMContentLoaded', () => {
+    lazyLoadPDF('modal-hospital', 'tab-h1', 'arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf');
+    lazyLoadPDF('modal-hospital', 'tab-h2', 'arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf');
+    lazyLoadPDF('modal-ferrosos', 'tab-f1', 'arquivos/0623FB-00-15-9067.pdf');
+    lazyLoadPDF('modal-ferrosos', 'tab-f2', 'arquivos/0623FB-00-15-9071.pdf');
+    lazyLoadPDF('modal-femsa', 'tab-fem1', 'arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf');
+  });
 </script>
 </body>
 </html>
