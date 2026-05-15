@@ -100,17 +100,17 @@ ul{list-style:none}
 .brand-logo{
   height:32px;width:auto;
   color:inherit;
-  filter:brightness(0) invert(1);
-  transition:filter .3s;
+  filter: none; /* Removendo o filtro que pode causar problemas de visibilidade */
+  transition: opacity 0.3s;
 }
 .site-header.scrolled .brand-logo{
-  filter:brightness(0);
+  opacity: 1; /* Garantindo visibilidade em fundos claros */
 }
 .footer-logo{
   height:30px;width:auto;
   color:var(--ink);
-  filter:brightness(0);
-  opacity:.85;
+  filter: none; /* Removendo o filtro */
+  opacity: 1; /* Garantindo visibilidade */
   display:block;
   margin-bottom:14px;
 }
