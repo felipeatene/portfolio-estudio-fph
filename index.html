@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="arquivos/logo-fph.svg">
 </head>
 <body id="top">
 
@@ -16,9 +17,7 @@
 <header class="site-header">
   <div class="shell nav">
     <a href="#top" class="brand">
-      <span class="brand-mark">FPH</span>
-      <span class="brand-sep"></span>
-      <span class="brand-name">Estúdio</span>
+      <img src="arquivos/logo-fph.svg" alt="Estúdio FPH" class="brand-logo">
     </a>
     <nav class="primary-nav" aria-label="Navegação principal">
       <a href="#projetos">Projetos</a>
@@ -114,54 +113,48 @@
       </div>
       <button class="modal-close" onclick="closeModalDirect('modal-hospital')" aria-label="Fechar">✕</button>
     </div>
-    <div class="modal-content">
-      <div class="modal-sidebar">
-        <nav class="modal-nav">
-          <button class="nav-btn active" onclick="switchSection(this, 'hospital-summary')">Resumo</button>
-          <button class="nav-btn" onclick="switchSection(this, 'hospital-scope')">Escopo Técnico</button>
-          <button class="nav-btn" onclick="switchSection(this, 'hospital-challenges')">Desafios e Soluções</button>
-          <button class="nav-btn" onclick="switchSection(this, 'hospital-indicators')">Indicadores</button>
-          <button class="nav-btn" onclick="switchSection(this, 'hospital-technologies')">Tecnologias</button>
-          <button class="nav-btn" onclick="switchSection(this, 'hospital-results')">Resultados</button>
-        </nav>
+    <div class="modal-body">
+      <div class="modal-info">
+        <div class="accordion">
+          <div class="acc-item open">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Resumo</span><span class="acc-icon">−</span></button>
+            <div class="acc-body"><p>Compatibilização BIM, documentação técnica e coordenação entre disciplinas para um complexo hospitalar.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Escopo Técnico</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Disciplinas envolvidas: arquitetura, engenharia estrutural, elétrica e hidráulica.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Desafios e Soluções</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Integração de sistemas complexos e otimização de fluxos hospitalares com compatibilização entre múltiplas disciplinas.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Indicadores</span><span class="acc-icon">+</span></button>
+            <div class="acc-body">
+              <ul class="ind-list">
+                <li><span>Área</span><strong>10.000 m²</strong></li>
+                <li><span>Prazo</span><strong>18 meses</strong></li>
+                <li><span>Fase</span><strong>Concluído</strong></li>
+                <li><span>Local</span><strong>Belo Horizonte, MG</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Tecnologias</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Revit, AutoCAD, Navisworks, BIM 360.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Resultados</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Redução de 20% no tempo de construção e 15% no custo total do projeto.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="modal-main" id="modal-hospital-content">
-        <section id="hospital-summary" class="modal-section active">
-          <h4>Resumo do Projeto</h4>
-          <p>Compatibilização BIM, documentação técnica e coordenação entre disciplinas para um complexo hospitalar.</p>
-        </section>
-        <section id="hospital-scope" class="modal-section">
-          <h4>Escopo Técnico</h4>
-          <p>Disciplinas envolvidas: arquitetura, engenharia estrutural, elétrica e hidráulica.</p>
-        </section>
-        <section id="hospital-challenges" class="modal-section">
-          <h4>Desafios e Soluções</h4>
-          <p>Desafios enfrentados incluem a integração de sistemas complexos e a otimização de fluxos hospitalares.</p>
-        </section>
-        <section id="hospital-indicators" class="modal-section">
-          <h4>Indicadores</h4>
-          <ul>
-            <li>Área: 10.000 m²</li>
-            <li>Prazo: 18 meses</li>
-            <li>Fase: Concluído</li>
-            <li>Localização: Belo Horizonte, MG</li>
-          </ul>
-        </section>
-        <section id="hospital-technologies" class="modal-section">
-          <h4>Tecnologias e Softwares</h4>
-          <p>Revit, AutoCAD, Navisworks, BIM 360.</p>
-        </section>
-        <section id="hospital-results" class="modal-section">
-          <h4>Resultados/Impacto</h4>
-          <p>Redução de 20% no tempo de construção e 15% no custo total do projeto.</p>
-        </section>
-        <section id="hospital-documents" class="modal-section">
-          <h4>Documentos</h4>
-          <ul>
-            <li><a href="arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf" download>Implantação</a></li>
-            <li><a href="arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf" download>Drywall</a></li>
-          </ul>
-        </section>
+      <div class="modal-pdf">
+        <div class="pdf-switcher">
+          <button class="pdf-tab active" onclick="switchPDF(this,'arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf')">Implantação</button>
+          <button class="pdf-tab" onclick="switchPDF(this,'arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf')">Drywall</button>
+        </div>
+        <iframe class="pdf-frame" src="arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf" title="PDF Hospital Sol"></iframe>
       </div>
     </div>
   </div>
@@ -176,54 +169,48 @@
       </div>
       <button class="modal-close" onclick="closeModalDirect('modal-ferrosos')" aria-label="Fechar">✕</button>
     </div>
-    <div class="modal-content">
-      <div class="modal-sidebar">
-        <nav class="modal-nav">
-          <button class="nav-btn active" onclick="switchSection(this, 'ferrosos-summary')">Resumo</button>
-          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-scope')">Escopo Técnico</button>
-          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-challenges')">Desafios e Soluções</button>
-          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-indicators')">Indicadores</button>
-          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-technologies')">Tecnologias</button>
-          <button class="nav-btn" onclick="switchSection(this, 'ferrosos-results')">Resultados</button>
-        </nav>
+    <div class="modal-body">
+      <div class="modal-info">
+        <div class="accordion">
+          <div class="acc-item open">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Resumo</span><span class="acc-icon">−</span></button>
+            <div class="acc-body"><p>Restaurante e refeitório industrial com layout de cozinha, esquadrias e mobiliário em aço inox.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Escopo Técnico</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Disciplinas envolvidas: arquitetura, engenharia de produção e design de interiores.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Desafios e Soluções</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Otimização de espaço e fluxo de trabalho na cozinha industrial para atender às normas sanitárias e de segurança alimentar.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Indicadores</span><span class="acc-icon">+</span></button>
+            <div class="acc-body">
+              <ul class="ind-list">
+                <li><span>Área</span><strong>2.500 m²</strong></li>
+                <li><span>Prazo</span><strong>12 meses</strong></li>
+                <li><span>Fase</span><strong>Em execução</strong></li>
+                <li><span>Local</span><strong>São Paulo, SP</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Tecnologias</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Revit, AutoCAD, SketchUp.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Resultados</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Aumento de 30% na eficiência operacional do restaurante.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="modal-main" id="modal-ferrosos-content">
-        <section id="ferrosos-summary" class="modal-section active">
-          <h4>Resumo do Projeto</h4>
-          <p>Restaurante e refeitório industrial com layout de cozinha, esquadrias e mobiliário em aço inox.</p>
-        </section>
-        <section id="ferrosos-scope" class="modal-section">
-          <h4>Escopo Técnico</h4>
-          <p>Disciplinas envolvidas: arquitetura, engenharia de produção e design de interiores.</p>
-        </section>
-        <section id="ferrosos-challenges" class="modal-section">
-          <h4>Desafios e Soluções</h4>
-          <p>Desafios enfrentados incluem a otimização de espaço e fluxo de trabalho na cozinha industrial.</p>
-        </section>
-        <section id="ferrosos-indicators" class="modal-section">
-          <h4>Indicadores</h4>
-          <ul>
-            <li>Área: 2.500 m²</li>
-            <li>Prazo: 12 meses</li>
-            <li>Fase: Em execução</li>
-            <li>Localização: São Paulo, SP</li>
-          </ul>
-        </section>
-        <section id="ferrosos-technologies" class="modal-section">
-          <h4>Tecnologias e Softwares</h4>
-          <p>Revit, AutoCAD, SketchUp.</p>
-        </section>
-        <section id="ferrosos-results" class="modal-section">
-          <h4>Resultados/Impacto</h4>
-          <p>Aumento de 30% na eficiência operacional do restaurante.</p>
-        </section>
-        <section id="ferrosos-documents" class="modal-section">
-          <h4>Documentos</h4>
-          <ul>
-            <li><a href="arquivos/0623FB-00-15-9067.pdf" download>Cozinha</a></li>
-            <li><a href="arquivos/0623FB-00-15-9071.pdf" download>Detalhamentos</a></li>
-          </ul>
-        </section>
+      <div class="modal-pdf">
+        <div class="pdf-switcher">
+          <button class="pdf-tab active" onclick="switchPDF(this,'arquivos/0623FB-00-15-9067.pdf')">Cozinha</button>
+          <button class="pdf-tab" onclick="switchPDF(this,'arquivos/0623FB-00-15-9071.pdf')">Detalhamentos</button>
+        </div>
+        <iframe class="pdf-frame" src="arquivos/0623FB-00-15-9067.pdf" title="PDF Ferrosos Baratinha"></iframe>
       </div>
     </div>
   </div>
@@ -238,53 +225,47 @@
       </div>
       <button class="modal-close" onclick="closeModalDirect('modal-femsa')" aria-label="Fechar">✕</button>
     </div>
-    <div class="modal-content">
-      <div class="modal-sidebar">
-        <nav class="modal-nav">
-          <button class="nav-btn active" onclick="switchSection(this, 'femsa-summary')">Resumo</button>
-          <button class="nav-btn" onclick="switchSection(this, 'femsa-scope')">Escopo Técnico</button>
-          <button class="nav-btn" onclick="switchSection(this, 'femsa-challenges')">Desafios e Soluções</button>
-          <button class="nav-btn" onclick="switchSection(this, 'femsa-indicators')">Indicadores</button>
-          <button class="nav-btn" onclick="switchSection(this, 'femsa-technologies')">Tecnologias</button>
-          <button class="nav-btn" onclick="switchSection(this, 'femsa-results')">Resultados</button>
-        </nav>
+    <div class="modal-body">
+      <div class="modal-info">
+        <div class="accordion">
+          <div class="acc-item open">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Resumo</span><span class="acc-icon">−</span></button>
+            <div class="acc-body"><p>Ampliação de ilha de armazenamento com rampa, alambrados, cobertura e atendimento à NR-11.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Escopo Técnico</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Disciplinas envolvidas: arquitetura, engenharia civil e segurança do trabalho.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Desafios e Soluções</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Adequação às normas NR-11 e integração com estruturas e instalações já existentes no complexo industrial.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Indicadores</span><span class="acc-icon">+</span></button>
+            <div class="acc-body">
+              <ul class="ind-list">
+                <li><span>Área</span><strong>5.000 m²</strong></li>
+                <li><span>Prazo</span><strong>8 meses</strong></li>
+                <li><span>Fase</span><strong>Planejamento</strong></li>
+                <li><span>Local</span><strong>Itabirito, MG</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Tecnologias</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Revit, AutoCAD, BIM 360.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-head" onclick="toggleAcc(this)"><span>Resultados</span><span class="acc-icon">+</span></button>
+            <div class="acc-body"><p>Conformidade total com normas de segurança e aumento de 25% na capacidade de armazenamento.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="modal-main" id="modal-femsa-content">
-        <section id="femsa-summary" class="modal-section active">
-          <h4>Resumo do Projeto</h4>
-          <p>Ampliação de ilha de armazenamento com rampa, alambrados, cobertura e atendimento à NR-11.</p>
-        </section>
-        <section id="femsa-scope" class="modal-section">
-          <h4>Escopo Técnico</h4>
-          <p>Disciplinas envolvidas: arquitetura, engenharia civil e segurança do trabalho.</p>
-        </section>
-        <section id="femsa-challenges" class="modal-section">
-          <h4>Desafios e Soluções</h4>
-          <p>Desafios enfrentados incluem a adequação às normas NR-11 e a integração com estruturas existentes.</p>
-        </section>
-        <section id="femsa-indicators" class="modal-section">
-          <h4>Indicadores</h4>
-          <ul>
-            <li>Área: 5.000 m²</li>
-            <li>Prazo: 8 meses</li>
-            <li>Fase: Planejamento</li>
-            <li>Localização: Itabirito, MG</li>
-          </ul>
-        </section>
-        <section id="femsa-technologies" class="modal-section">
-          <h4>Tecnologias e Softwares</h4>
-          <p>Revit, AutoCAD, BIM 360.</p>
-        </section>
-        <section id="femsa-results" class="modal-section">
-          <h4>Resultados/Impacto</h4>
-          <p>Conformidade total com normas de segurança e aumento de 25% na capacidade de armazenamento.</p>
-        </section>
-        <section id="femsa-documents" class="modal-section">
-          <h4>Documentos</h4>
-          <ul>
-            <li><a href="arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf" download>Planta de Cotas e Cortes</a></li>
-          </ul>
-        </section>
+      <div class="modal-pdf">
+        <div class="pdf-switcher">
+          <button class="pdf-tab active" onclick="switchPDF(this,'arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf')">Planta de Cotas e Cortes</button>
+        </div>
+        <iframe class="pdf-frame" src="arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf" title="PDF FEMSA Coca-Cola Itabirito"></iframe>
       </div>
     </div>
   </div>
@@ -393,7 +374,7 @@
         <li>Design gráfico e apresentação visual</li>
       </ul>
 
-      <a href="https://www.linkedin.com/in/felipe-guimar%C3%Aães-4a120918b/" target="_blank" rel="noopener" class="link-arrow">Ver perfil no LinkedIn <span aria-hidden="true">→</span></a>
+      <a href="https://www.linkedin.com/in/felipe-guimar%C3%A3es-4a120918b/" target="_blank" rel="noopener" class="link-arrow">Ver perfil no LinkedIn <span aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -427,7 +408,7 @@
           </span>
         </a>
 
-        <a class="contact-btn" href="https://www.linkedin.com/in/felipe-guimar%C3%Aães-4a120918b/" target="_blank" rel="noopener">
+        <a class="contact-btn" href="https://www.linkedin.com/in/felipe-guimar%C3%A3es-4a120918b/" target="_blank" rel="noopener">
           <span class="contact-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-6a6 6 0 0 1 6-6Z"/><path d="M2 9h4v11H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </span>
@@ -462,7 +443,7 @@
 <footer class="site-footer">
   <div class="shell footer-grid">
     <div class="footer-brand">
-      <span class="brand-mark">FPH</span>
+      <img src="arquivos/logo-fph.svg" alt="Estúdio FPH" class="footer-logo">
       <p>Estúdio de arquitetura, BIM e documentação técnica.<br>Belo Horizonte · MG · Brasil</p>
     </div>
     <div class="footer-cols">
@@ -475,7 +456,7 @@
       </div>
       <div>
         <p class="foot-title">Social</p>
-        <a href="https://www.linkedin.com/in/felipe-guimar%C3%Aães-4a120918b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/felipe-guimar%C3%A3es-4a120918b/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://wa.me/5531975543755" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:lipeacg@gmail.com">E-mail</a>
       </div>
@@ -487,8 +468,6 @@
   </div>
 </footer>
 
-<!-- Include PDF.js library -->
-<script src="node_modules/pdfjs-dist/build/pdf.min.js"></script>
 <script>
   // Unified data model for project content
   const projectData = {
@@ -556,7 +535,45 @@
     }
   };
 
-  // Function to switch sections dynamically
+  // Modal open/close functions
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModalDirect(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOutside(event, id) {
+    if (event.target === document.getElementById(id)) {
+      closeModalDirect(id);
+    }
+  }
+
+  // Header: aplica .scrolled ao sair do hero
+  (function () {
+    const header = document.querySelector('.site-header');
+    const hero   = document.querySelector('.hero');
+    function onScroll() {
+      const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+      header.classList.toggle('scrolled', heroBottom <= 0);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-backdrop.open').forEach(function(m) {
+        m.classList.remove('open');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Function to switch sections dynamically (legacy, kept for safety)
   function switchSection(button, sectionId) {
     const modal = button.closest('.modal-box');
     modal.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
@@ -565,201 +582,21 @@
     document.getElementById(sectionId).classList.add('active');
   }
 
-  // Initialize PDF.js viewer
-  function initializePDFViewer(pdfUrl, containerId) {
-    const container = document.getElementById(containerId);
-    const loadingTask = pdfjsLib.getDocument(pdfUrl);
-
-    loadingTask.promise.then(pdf => {
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        pdf.getPage(pageNum).then(page => {
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          container.appendChild(canvas);
-
-          const viewport = page.getViewport({ scale: 1.5 });
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          const renderContext = {
-            canvasContext: context,
-            viewport: viewport
-          };
-          page.render(renderContext);
-        });
-      }
-    }).catch(error => {
-      console.error('Error loading PDF:', error);
-    });
+  // Accordion toggle
+  function toggleAcc(btn) {
+    const item = btn.closest('.acc-item');
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    btn.querySelector('.acc-icon').textContent = isOpen ? '+' : '−';
   }
 
-  // Add viewer controls for zoom, pagination, and search
-  function setupViewerControls(viewerId, pdfUrl) {
-    const viewerContainer = document.getElementById(viewerId);
-    const zoomInButton = document.createElement('button');
-    const zoomOutButton = document.createElement('button');
-    const pageInput = document.createElement('input');
-    const totalPages = document.createElement('span');
-
-    zoomInButton.textContent = '+';
-    zoomOutButton.textContent = '-';
-    pageInput.type = 'number';
-    pageInput.min = 1;
-    pageInput.value = 1;
-    totalPages.textContent = '/ 1';
-
-    const controls = document.createElement('div');
-    controls.className = 'viewer-controls';
-    controls.appendChild(zoomOutButton);
-    controls.appendChild(zoomInButton);
-    controls.appendChild(pageInput);
-    controls.appendChild(totalPages);
-
-    viewerContainer.parentElement.insertBefore(controls, viewerContainer);
-
-    let currentPage = 1;
-    let currentScale = 1.5;
-    let pdfDoc = null;
-
-    const renderPage = (pageNum) => {
-      pdfDoc.getPage(pageNum).then(page => {
-        const canvas = viewerContainer.querySelector('canvas');
-        const context = canvas.getContext('2d');
-        const viewport = page.getViewport({ scale: currentScale });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        const renderContext = {
-          canvasContext: context,
-          viewport: viewport
-        };
-        page.render(renderContext);
-      });
-    };
-
-    zoomInButton.addEventListener('click', () => {
-      currentScale += 0.2;
-      renderPage(currentPage);
-    });
-
-    zoomOutButton.addEventListener('click', () => {
-      currentScale = Math.max(0.5, currentScale - 0.2);
-      renderPage(currentPage);
-    });
-
-    pageInput.addEventListener('change', () => {
-      const pageNum = parseInt(pageInput.value, 10);
-      if (pageNum > 0 && pageNum <= pdfDoc.numPages) {
-        currentPage = pageNum;
-        renderPage(currentPage);
-      } else {
-        pageInput.value = currentPage;
-      }
-    });
-
-    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-      pdfDoc = pdf;
-      totalPages.textContent = `/ ${pdf.numPages}`;
-      renderPage(currentPage);
-    });
+  // Switch PDF inside modal viewer
+  function switchPDF(btn, url) {
+    const modal = btn.closest('.modal-box');
+    modal.querySelectorAll('.pdf-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    modal.querySelector('.pdf-frame').src = url;
   }
-
-  // Add collapsible thumbnail panel for PDF viewer
-  function setupThumbnailPanel(viewerId, pdfUrl) {
-    const viewerContainer = document.getElementById(viewerId);
-    const thumbnailPanel = document.createElement('div');
-    thumbnailPanel.className = 'thumbnail-panel';
-
-    const toggleButton = document.createElement('button');
-    toggleButton.textContent = 'Thumbnails';
-    toggleButton.className = 'thumbnail-toggle';
-    toggleButton.addEventListener('click', () => {
-      thumbnailPanel.classList.toggle('open');
-    });
-
-    viewerContainer.parentElement.insertBefore(toggleButton, viewerContainer);
-    viewerContainer.parentElement.insertBefore(thumbnailPanel, viewerContainer);
-
-    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        pdf.getPage(pageNum).then(page => {
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          thumbnailPanel.appendChild(canvas);
-
-          const viewport = page.getViewport({ scale: 0.3 });
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          const renderContext = {
-            canvasContext: context,
-            viewport: viewport
-          };
-          page.render(renderContext);
-
-          canvas.addEventListener('click', () => {
-            const mainCanvas = viewerContainer.querySelector('canvas');
-            const mainContext = mainCanvas.getContext('2d');
-            const mainViewport = page.getViewport({ scale: 1.5 });
-            mainCanvas.height = mainViewport.height;
-            mainCanvas.width = mainViewport.width;
-
-            const mainRenderContext = {
-              canvasContext: mainContext,
-              viewport: mainViewport
-            };
-            page.render(mainRenderContext);
-          });
-        });
-      }
-    });
-  }
-
-  // Enable lazy loading for PDFs
-  function lazyLoadPDF(modalId, viewerId, pdfUrl) {
-    const modal = document.getElementById(modalId);
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          initializePDFViewer(pdfUrl, viewerId);
-          setupViewerControls(viewerId, pdfUrl);
-          setupThumbnailPanel(viewerId, pdfUrl);
-          obs.disconnect();
-        }
-      });
-    }, { root: null, threshold: 0.1 });
-
-    observer.observe(modal);
-  }
-
-  // Apply lazy loading to all modals
-  document.addEventListener('DOMContentLoaded', () => {
-    lazyLoadPDF('modal-hospital', 'tab-h1', 'arquivos/006-2024-01-EX-ARQ-GER-DES-002_R00.pdf');
-    lazyLoadPDF('modal-hospital', 'tab-h2', 'arquivos/006-2024-01-EX-ARQ-GER-DES-005_R00.pdf');
-    lazyLoadPDF('modal-ferrosos', 'tab-f1', 'arquivos/0623FB-00-15-9067.pdf');
-    lazyLoadPDF('modal-ferrosos', 'tab-f2', 'arquivos/0623FB-00-15-9071.pdf');
-    lazyLoadPDF('modal-femsa', 'tab-fem1', 'arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf');
-  });
-
-  // Update labels for user-friendly UI
-  const labelMapping = {
-    "summary": "Resumo",
-    "scope": "Escopo Técnico",
-    "challenges": "Desafios e Soluções",
-    "indicators": "Indicadores",
-    "technologies": "Tecnologias",
-    "results": "Resultados",
-    "documents": "Documentos"
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.modal-nav .nav-btn').forEach(button => {
-      const sectionKey = button.getAttribute('onclick').match(/'(.*?)'/)[1].split('-')[1];
-      if (labelMapping[sectionKey]) {
-        button.textContent = labelMapping[sectionKey];
-      }
-    });
-  });
 </script>
 </body>
 </html>
