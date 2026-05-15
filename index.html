@@ -740,6 +740,26 @@
     lazyLoadPDF('modal-ferrosos', 'tab-f2', 'arquivos/0623FB-00-15-9071.pdf');
     lazyLoadPDF('modal-femsa', 'tab-fem1', 'arquivos/FEMSA%20Coca%20Cola%20-%20Itabirito.pdf');
   });
+
+  // Update labels for user-friendly UI
+  const labelMapping = {
+    "summary": "Resumo",
+    "scope": "Escopo Técnico",
+    "challenges": "Desafios e Soluções",
+    "indicators": "Indicadores",
+    "technologies": "Tecnologias",
+    "results": "Resultados",
+    "documents": "Documentos"
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.modal-nav .nav-btn').forEach(button => {
+      const sectionKey = button.getAttribute('onclick').match(/'(.*?)'/)[1].split('-')[1];
+      if (labelMapping[sectionKey]) {
+        button.textContent = labelMapping[sectionKey];
+      }
+    });
+  });
 </script>
 </body>
 </html>
